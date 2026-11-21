@@ -83,3 +83,10 @@ SonrisaPlena_v2/
 
 ## Nota académica
 Las cifras, la calificación y los testimonios son **de ejemplo** y así se indica en la página.
+
+## Ajustes para la rúbrica de la Actividad 4 (21 de noviembre de 2026)
+
+- **index.html**: sección «Así creamos este sitio» en Inicio con el video del proyecto (`#video`), tabla de precios y tiempos y glosario con enlaces en Servicios, tabla de horarios y listas en Contacto, enlace al video en el pie y segunda fuente (Fraunces) en la línea 12.
+- **styles.css** (sección 17, al final): títulos en Fraunces, estilos de la sección del video, tablas con fondo y borde de color, y listas.
+- **main.js** (sección 17, al final): constante `VIDEO_YOUTUBE` para pegar el enlace del video, tabla de servicios generada con los datos de `SERVICIOS` y desplazamiento a `#video`. Se corrigió el mensaje de almacenamiento de la línea 48.
+- Las líneas citadas en el informe y en el guion (index.html 1-13 y 27-37, styles.css 8-20, main.js 97-106 y 200-205) no cambiaron de posición.

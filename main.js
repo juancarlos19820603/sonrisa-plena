@@ -45,7 +45,7 @@ const LKEY='sonrisa-plena-citas';
 function localLoad(){try{return JSON.parse(localStorage.getItem(LKEY)||'[]');}catch(e){return [];}}
 function localSave(a){try{localStorage.setItem(LKEY,JSON.stringify(a));return true;}catch(e){return false;}}
 store.citas=localLoad();
-function storageText(){return store.mode==='db'?'Tus citas se guardan en la base de datos del sitio, asociadas a tu cuenta: puedes consultarlas desde cualquier dispositivo.':'Tus citas se guardan en este navegador (modo local). Para guardarlas en la nube abre el sitio con tu cuenta de Claude.';}
+function storageText(){return store.mode==='db'?'Tus citas se guardan en la base de datos del sitio, asociadas a tu cuenta: puedes consultarlas desde cualquier dispositivo.':'Tus citas se guardan en este navegador (modo local). Cada persona ve solo las citas que agendó desde su propio dispositivo.';}
 function refreshStorageNotes(){$('#storage-note').textContent=storageText();$('#storage-note2').textContent=storageText();}
 async function initDb(){
  try{
@@ -138,7 +138,7 @@ function renderDetalle(s){
  box.replaceChildren(h('div',{class:'crumb'},h('a',{href:'#inicio',text:'Inicio'}),' / ',h('a',{href:'#servicios',text:'Servicios'}),' / '+s.nombre),
   h('div',{class:'two',style:'margin-top:16px'},
    h('div',{},h('div',{class:'photo media',style:'height:clamp(220px,34vw,400px)'},pic(s.id,'Foto del servicio '+s.nombre,'border-radius:24px')),h('h1',{text:s.nombre,style:'font-size:clamp(30px,5vw,44px);margin:28px 0 10px'}),h('p',{class:'muted',style:'font-size:18px',text:s.desc+' Atención con control del odontólogo en cada sesión.'}),h('h3',{text:'¿Cómo es el procedimiento?',style:'font-size:22px;margin-top:28px'}),
-    h('div',{class:'steps-list'},s.pasos.map((p,i)=>h('div',{style:'display:flex;gap:14px'},h('div',{class:'num',text:String(i+1)}),h('div',{},h('b',{text:p[0]}),h('p',{class:'muted',style:'font-size:15px',text:p[1]})))))),
+    h('div',{class:'steps-list'},s.pasos.map((p,i)=>h('div',{style:'display:flex;gap:14px'},h('div',{class:'cnum',text:String(i+1)}),h('div',{},h('b',{text:p[0]}),h('p',{class:'muted',style:'font-size:15px',text:p[1]})))))),
    h('aside',{class:'card shadow sticky',style:'display:grid;gap:14px'},h('span',{class:'muted',text:'Desde'}),h('div',{class:'price',style:'font-size:34px;margin-top:-10px',text:fmt(s.precio)}),
     h('div',{class:'kv'},h('span',{text:'Duración'}),h('b',{text:s.dur+' min'})),h('div',{class:'kv'},h('span',{text:'Categoría'}),h('b',{text:s.cat})),h('div',{style:'display:grid;gap:10px'},h('span',{class:'muted',text:'Especialistas'}),docsDe(s.id).map(d=>h('div',{style:'display:flex;gap:10px;align-items:center'},h('span',{class:'avatar ph-av',style:'width:40px;height:40px'},pic(d.id,'')),h('span',{},h('b',{text:d.nombre,style:'display:block;font-size:15px'}),h('span',{class:'muted',style:'font-size:13px',text:d.esp}))))),
     h('a',{class:'btn primary block',href:'#agendar-'+s.id},icon('cal','#fff'),'Agendar este servicio'),
@@ -405,3 +405,23 @@ initAnim();decorarEncabezados();paintIcons();renderCarrusel();renderFaq();render
 initDb();
 
 ajustarBarra();
+
+/* ---------- 17. Actividad 4: video del proyecto, tabla de servicios y enlace #video ---------- */
+/* Pegue aquí el enlace del video de YouTube (por ejemplo https://youtu.be/XXXXXXXXXXX). */
+const VIDEO_YOUTUBE='';
+/* Solo se acepta un identificador de 11 caracteres de YouTube: así no se inserta una URL arbitraria en la página */
+function idYoutube(url){const m=String(url).match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:null;}
+function renderVideo(){const box=$('#video-box');if(!box)return;const id=idYoutube(VIDEO_YOUTUBE);
+ if(id){const f=h('iframe',{title:'Video: así creamos el sitio Sonrisa Plena',loading:'lazy',allow:'accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share',referrerpolicy:'strict-origin-when-cross-origin',allowfullscreen:''});
+  f.src='https://www.youtube-nocookie.com/embed/'+id;box.replaceChildren(f);}
+ else box.replaceChildren(h('div',{class:'video-ph'},h('div',{},h('div',{class:'play','aria-hidden':'true',text:'▶'}),h('p',{text:'Aquí se verá el video de demostración del proyecto.'}))));}
+/* La tabla se arma con los mismos datos de SERVICIOS y ODONTOLOGOS: si cambia un precio, cambia en todo el sitio */
+function renderTablaServicios(){const tb=$('#tabla-srv-body');if(!tb)return;
+ tb.replaceChildren(...SERVICIOS.map(s=>h('tr',{},
+  h('th',{scope:'row'},h('a',{href:'#servicio-'+s.id,text:s.nombre})),
+  h('td',{text:s.cat}),h('td',{class:'cnum',text:s.dur+' min'}),
+  h('td',{class:'cnum',text:fmt(s.precio)}),h('td',{class:'cnum',text:String(docsDe(s.id).length)}))));}
+/* #video no es una vista: route() muestra Inicio y aquí se baja hasta la sección del video */
+function irAVideo(){if(location.hash!=='#video')return;setTimeout(()=>{const v=$('#video');if(v)v.scrollIntoView({behavior:'smooth',block:'start'});},80);}
+window.addEventListener('hashchange',irAVideo);
+renderVideo();renderTablaServicios();irAVideo();

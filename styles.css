@@ -401,3 +401,34 @@ body{transition:background-color .3s ease,color .3s ease}
 [data-theme=dark] .burger,[data-theme=dark] .car-btn{color:#E8EDF5}
 [data-theme=dark] .ph-av img,[data-theme=dark] .media img{filter:brightness(.92)}
 [data-theme=dark] .map .open,[data-theme=dark] .map .pin{color:#0A1A33}
+
+/* ---------- 17. Actividad 4: tipografía de títulos, video, tablas de color y listas ---------- */
+/* Segunda familia tipográfica: Fraunces (serif) en los títulos y Manrope (sans) en el texto */
+h1,h2,.quote blockquote{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-optical-sizing:auto}
+h1 em,h2 em{font-style:italic;font-weight:500}
+.video-sec{background:var(--cream)}
+.video-grid{display:grid;gap:32px;align-items:start;margin-top:8px}
+@media(min-width:960px){.video-grid{grid-template-columns:1.4fr 1fr}}
+.video-box{position:relative;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;background:#0A1A33;border:2px solid #D2B67C;box-shadow:var(--shadow-lg)}
+.video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#E8EDF5;padding:24px}
+.video-ph .play{width:72px;height:72px;border-radius:50%;background:#D2B67C;color:#0A1A33;display:grid;place-items:center;font-size:1.6rem;margin:0 auto 14px}
+.lista-num{padding-left:1.4em;margin:12px 0 24px}
+.lista-num li{margin:.5em 0;padding-left:.3em}
+.lista-num li::marker{color:var(--gold-text);font-weight:700}
+.lista-check{list-style:none;padding:0;margin:12px 0 24px}
+.lista-check li{position:relative;padding-left:1.6em;margin:.6em 0}
+.lista-check li::before{content:"";position:absolute;left:.25em;top:.6em;width:.55em;height:.55em;border-radius:50%;background:#D2B67C}
+.lista-num a,.lista-check a,.tabla-color a{color:var(--gold-text);font-weight:600}
+.tabla-color-wrap{border:2px solid #D2B67C;border-radius:var(--radius);margin:8px 0 32px}
+table.tabla-color{min-width:560px}
+.tabla-color caption{caption-side:top;text-align:left;padding:14px 16px;font-weight:600;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabla-color thead th{background:#0A1A33;color:#F4E7C8;font-size:.85rem;letter-spacing:.03em;text-transform:none;border-bottom:2px solid #D2B67C}
+.tabla-color td,.tabla-color tbody th{border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.tabla-color tr>*:last-child{border-right:0}
+.tabla-color tbody tr:nth-child(even){background:var(--cream)}
+.tabla-color tbody th{font-weight:700;color:var(--navy);text-transform:none;font-size:.95rem;letter-spacing:0}
+.tabla-color .cnum{text-align:right;font-variant-numeric:tabular-nums}
+.glosario{margin-top:8px}
+.contacto-extra{margin-top:48px;align-items:start}
+[data-theme=dark] .tabla-color thead th{background:#132A4F}

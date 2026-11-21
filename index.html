@@ -9,7 +9,7 @@
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300..600;1,300..600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script>/* Tema antes de pintar (evita el destello claro): preferencia guardada o la del sistema */
 (function(){var t=null;try{t=localStorage.getItem('sp-tema');}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -113,6 +113,29 @@
   <div class="faq" id="faq"></div>
  </div></section>
 
+ <!-- 9b. Video del proyecto (requisito de la Actividad 4) -->
+ <section id="video" class="video-sec" aria-labelledby="video-t"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Proyecto académico</span><h2 id="video-t">Así creamos <em>este sitio</em></h2><p class="muted" style="margin-top:10px">En este video el grupo muestra y explica, paso a paso, cómo se construyó y publicó Sonrisa Plena.</p></div>
+  <div class="video-grid">
+   <div class="video-box" id="video-box"></div>
+   <div>
+    <h3>Contenido del video</h3>
+    <ol class="lista-num">
+     <li><strong>Giovanny Rodriguez:</strong> problema del consultorio, objetivo del sitio y herramientas.</li>
+     <li><strong>Andres Vargas:</strong> estructura de archivos y <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener">HTML<span class="sr-only"> (abre en otra pestaña)</span> ↗</a> semántico.</li>
+     <li><strong>Robinson Arenas:</strong> <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener">JavaScript<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>: navegación, agendamiento y validación.</li>
+     <li><strong>Juan Carlos Londoño:</strong> diseño con <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener">CSS<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>, Git y publicación.</li>
+    </ol>
+    <h3>Términos técnicos del proyecto</h3>
+    <ul class="lista-check">
+     <li><a href="https://developer.mozilla.org/es/docs/Glossary/Responsive_web_design" target="_blank" rel="noopener">Diseño responsivo<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>: el sitio se adapta al ancho del celular, la tableta o el computador.</li>
+     <li><a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener">localStorage<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>: espacio del navegador donde se guardan las citas de prueba, sin base de datos.</li>
+     <li><a href="https://docs.github.com/es/pages/quickstart" target="_blank" rel="noopener">GitHub Pages<span class="sr-only"> (abre en otra pestaña)</span> ↗</a>: hosting gratuito que publica el sitio desde el repositorio, con HTTPS.</li>
+    </ul>
+   </div>
+  </div>
+ </div></section>
+
  <!-- 10. Llamado final -->
  <section><div class="wrap">
   <div class="cta-final rv">
@@ -127,6 +150,23 @@
  <div class="hdr" data-tema="servicios"><div class="wrap"><div class="crumb"><a href="#inicio">Inicio</a> / Servicios</div><h1>Nuestros <em>servicios</em></h1><p class="muted" style="margin-top:10px">Elige un tratamiento para ver detalles, precios de referencia y agendar.</p>
   <div class="chips" id="filtros" role="group" aria-label="Filtrar servicios" style="margin-top:24px"></div></div></div>
  <section><div class="wrap"><div class="grid g3" id="srv-list"></div><p class="muted" style="font-size:.9rem;margin-top:20px">Precios de referencia en pesos colombianos. El valor final se define en la valoración.</p></div></section>
+ <section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Comparativo</span><h2>Precios y tiempos <em>de un vistazo</em></h2></div>
+  <div class="table-wrap tabla-color-wrap"><table class="tabla-color" id="tabla-srv"><caption>Servicios de Sonrisa Plena: categoría, duración, valor de referencia y especialistas disponibles</caption>
+   <thead><tr><th scope="col">Servicio</th><th scope="col">Categoría</th><th scope="col" class="cnum">Duración</th><th scope="col" class="cnum">Desde</th><th scope="col" class="cnum">Especialistas</th></tr></thead>
+   <tbody id="tabla-srv-body"></tbody></table></div>
+  <div class="glosario card">
+   <h3>Glosario: ¿qué significa cada término?</h3>
+   <ul class="lista-check">
+    <li><strong>Placa bacteriana:</strong> capa pegajosa de bacterias que se forma sobre los dientes; la limpieza dental la retira. <a href="https://www.nidcr.nih.gov/espanol/temas-de-salud/la-higiene-oral" target="_blank" rel="noopener">Leer más<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></li>
+    <li><strong>Caries:</strong> daño del diente que producen los ácidos de algunas bacterias de la boca. <a href="https://www.nidcr.nih.gov/espanol/temas-de-salud/la-caries-dental" target="_blank" rel="noopener">Leer más<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></li>
+    <li><strong>Periodoncia:</strong> especialidad que trata las encías y los tejidos que sostienen los dientes. <a href="https://www.nidcr.nih.gov/espanol/temas-de-salud/la-enfermedad-de-las-encias" target="_blank" rel="noopener">Leer más<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></li>
+    <li><strong>Endodoncia:</strong> tratamiento de conducto que limpia el interior del diente para salvarlo en lugar de extraerlo. <a href="https://www.mayoclinic.org/es/diseases-conditions/tooth-abscess/in-depth/root-canal/art-20585454" target="_blank" rel="noopener">Leer más<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></li>
+    <li><strong>Sellantes:</strong> capa protectora delgada que se aplica sobre las muelas para prevenir caries, muy usada en niños. <a href="https://www.nidcr.nih.gov/espanol/temas-de-salud/los-selladores-dentales" target="_blank" rel="noopener">Leer más<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></li>
+    <li><strong>Odontopediatría:</strong> odontología dedicada a bebés, niños y adolescentes. <a href="https://www.nidcr.nih.gov/espanol/temas-de-salud/la-salud-oral-de-los-ninos" target="_blank" rel="noopener">Leer más<span class="sr-only"> (abre en otra pestaña)</span> ↗</a></li>
+   </ul>
+  </div>
+ </div></section>
 </div>
 
 <!-- ================= DETALLE ================= -->
@@ -245,6 +285,18 @@
     <p class="note warn" id="c-ok" hidden style="margin-top:16px"></p>
    </form>
   </div>
+  <div class="grid g2 contacto-extra">
+   <div><h3>Horarios de atención</h3>
+    <div class="table-wrap tabla-color-wrap"><table class="tabla-color"><caption>Horario de la sede y turnos para citas en línea</caption>
+     <thead><tr><th scope="col">Día</th><th scope="col">Sede (recepción)</th><th scope="col">Turnos en línea (hora de inicio)</th></tr></thead>
+     <tbody><tr><th scope="row">Lunes a viernes</th><td>7:00 a. m. – 7:00 p. m.</td><td>8:00 a. m. – 11:30 a. m. y 2:00 p. m. – 5:30 p. m.</td></tr>
+     <tr><th scope="row">Sábado</th><td>8:00 a. m. – 1:00 p. m.</td><td>8:00 a. m. – 12:00 m.</td></tr>
+     <tr><th scope="row">Domingo</th><td>Cerrado</td><td>Sin turnos</td></tr></tbody></table></div></div>
+   <div><h3>Antes de tu cita</h3>
+    <ol class="lista-num"><li>Agenda en línea y guarda tu código de reserva (empieza por SP-).</li><li>Llega 10 minutos antes para registrarte en recepción.</li><li>Si no puedes asistir, cancela desde <a href="#mis-citas">Mis citas</a> para liberar el horario.</li></ol>
+    <h3>Qué llevar</h3>
+    <ul class="lista-check"><li>Documento de identidad.</li><li>Radiografías o exámenes recientes, si los tienes.</li><li>Lista de los medicamentos que tomas.</li><li>Si el paciente es menor de edad, un adulto acompañante.</li></ul></div>
+  </div>
  </div></section>
 </div>
 </main>
@@ -254,7 +306,7 @@
  <div class="cols">
   <div><a class="brand" href="#inicio" style="color:#fff;margin-bottom:14px"><span class="logo"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 5.2C10.6 4 9 3.4 7.4 3.6 4.9 3.9 3.6 5.9 3.8 8.4c.2 2.2 1.2 3.8 1.8 6 .5 2 .9 6 2.7 6 1.4 0 1.6-2.8 2.1-4.4.3-.9.8-1.4 1.6-1.4s1.3.5 1.6 1.4c.5 1.6.7 4.4 2.1 4.4 1.8 0 2.2-4 2.7-6 .6-2.2 1.6-3.8 1.8-6 .2-2.5-1.1-4.5-3.6-4.8-1.6-.2-3.2.4-4.6 1.6z"/></svg></span>Sonrisa Plena</a><p>Odontología integral en Medellín.</p></div>
   <div><h4>Horarios</h4><p>Lunes a viernes<br>7:00 a. m. – 7:00 p. m.</p><p style="margin-top:8px">Sábados<br>8:00 a. m. – 1:00 p. m.</p></div>
-  <div><h4>Contacto</h4><p><a href="tel:+576044440000">(604) 444 0000</a></p><p><a href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp +57 300 000 0000</a></p><p><a href="mailto:citas@sonrisaplena.co">citas@sonrisaplena.co</a></p></div>
+  <div><h4>Contacto</h4><p><a href="tel:+576044440000">(604) 444 0000</a></p><p><a href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp +57 300 000 0000</a></p><p><a href="mailto:citas@sonrisaplena.co">citas@sonrisaplena.co</a></p><p style="margin-top:8px"><a href="#video">▶ Video del proyecto</a></p></div>
   <div><h4>Cómo llegar</h4>
    <a class="map" href="https://www.google.com/maps/search/?api=1&query=Cra.+43A+%231-50+El+Poblado+Medell%C3%ADn" target="_blank" rel="noopener" aria-label="Abrir la ubicación de Sonrisa Plena en Google Maps (Cra. 43A #1-50, El Poblado)">
     <svg viewBox="0 0 320 200" aria-hidden="true"><rect width="320" height="200" fill="#13294A"/><g stroke="#24406A" stroke-width="10" fill="none"><path d="M-10 60 L330 90"/><path d="M-10 150 L330 130"/><path d="M90 -10 L120 210"/><path d="M220 -10 L200 210"/></g><g stroke="#1C3558" stroke-width="5" fill="none"><path d="M0 110 L320 110"/><path d="M40 0 L60 200"/><path d="M270 0 L280 200"/><path d="M150 0 L170 200"/></g><path d="M-10 185 C80 160 140 200 330 170" stroke="#2EC4B6" stroke-opacity=".35" stroke-width="12" fill="none"/></svg>
