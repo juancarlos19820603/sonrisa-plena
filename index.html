@@ -31,7 +31,7 @@
    <li><a href="#inicio" data-nav="inicio">Inicio</a></li>
    <li><a href="#servicios" data-nav="servicios">Servicios</a></li>
    <li><a href="#mis-citas" data-nav="mis-citas">Mis citas</a></li>
-   <li><a href="#nosotros" data-nav="nosotros">Nosotros</a></li>
+   <li><a href="#nosotros" data-nav="nosotros">Nosotros</a></li><li><a href="#video" data-nav="video">Video</a></li>
    <li><a href="#contacto" data-nav="contacto">Contacto</a></li>
    <li id="nav-panel" hidden><a href="#panel" data-nav="panel">Panel consultorio</a></li>
   </ul></nav>
@@ -113,8 +113,19 @@
   <div class="faq" id="faq"></div>
  </div></section>
 
- <!-- 9b. Video del proyecto (requisito de la Actividad 4) -->
- <section id="video" class="video-sec" aria-labelledby="video-t"><div class="wrap">
+ <!-- 10. Llamado final -->
+ <section><div class="wrap">
+  <div class="cta-final rv">
+   <div><h2>Tu próxima sonrisa empieza <em>hoy</em></h2><p style="margin-top:12px">Elige servicio, especialista y hora. Recibes tu código al instante.</p></div>
+   <div class="row-btns"><a class="btn primary" href="#agendar"><span data-ic="cal" data-c="#0B1F3A"></span>Agendar cita</a><a class="btn outline on-dark" href="https://wa.me/573000000000" target="_blank" rel="noopener"><span data-ic="chat" data-c="currentColor"></span>WhatsApp</a></div>
+  </div>
+ </div></section>
+</div>
+
+<!-- ================= VIDEO ================= -->
+<div class="view" id="v-video">
+ <!-- Video del proyecto (requisito de la Actividad 4) -->
+ <section id="video-proyecto" class="video-sec" aria-labelledby="video-t"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Proyecto académico</span><h2 id="video-t">Así creamos <em>este sitio</em></h2><p class="muted" style="margin-top:10px">En este video el grupo muestra y explica, paso a paso, cómo se construyó y publicó Sonrisa Plena.</p></div>
   <div class="video-grid">
    <div class="video-box" id="video-box"></div>
@@ -136,11 +147,23 @@
   </div>
  </div></section>
 
- <!-- 10. Llamado final -->
- <section><div class="wrap">
-  <div class="cta-final rv">
-   <div><h2>Tu próxima sonrisa empieza <em>hoy</em></h2><p style="margin-top:12px">Elige servicio, especialista y hora. Recibes tu código al instante.</p></div>
-   <div class="row-btns"><a class="btn primary" href="#agendar"><span data-ic="cal" data-c="#0B1F3A"></span>Agendar cita</a><a class="btn outline on-dark" href="https://wa.me/573000000000" target="_blank" rel="noopener"><span data-ic="chat" data-c="currentColor"></span>WhatsApp</a></div>
+
+ <!-- Explicación en texto del video (también sirve como transcripción resumida) -->
+ <section class="video-resumen" aria-labelledby="vr-t"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Resumen del video</span><h2 id="vr-t">¿De qué <em>habla</em> el video?</h2><p class="muted" style="margin-top:10px">Explicación en texto para quien prefiera leer o no pueda reproducir el audio. Duración aproximada: 7 minutos.</p></div>
+  <div class="vr-grid">
+   <article class="card vr-card"><span class="vr-num">1</span><h3>El problema y el objetivo</h3><p class="vr-quien">Giovanny Rodriguez Albarracin</p>
+    <p>Sonrisa Plena es un consultorio odontológico ficticio de Medellín que agenda por WhatsApp y por teléfono, lo que genera cruces de horario, olvidos e inasistencias. El objetivo del sitio es que el paciente conozca los 8 servicios y los 11 especialistas, agende su cita en tres pasos y luego pueda consultarla o cancelarla, desde el computador o el celular.</p>
+    <p>Se explican las herramientas: Visual Studio Code, HTML, CSS y JavaScript sin marcos de trabajo, Git y GitHub para las versiones, y GitHub Pages para publicar gratis.</p></article>
+   <article class="card vr-card"><span class="vr-num">2</span><h3>Estructura y HTML semántico</h3><p class="vr-quien">Andres Ricardo Vargas Avila</p>
+    <p>El proyecto tiene tres archivos con responsabilidades separadas: <code>index.html</code> (estructura), <code>styles.css</code> (diseño) y <code>main.js</code> (comportamiento), más la carpeta <code>img</code> con las fotografías.</p>
+    <p>Se muestran la cabecera del documento (idioma, codificación UTF-8, viewport y fuentes) y las etiquetas semánticas <code>header</code>, <code>nav</code>, <code>main</code> y <code>footer</code>, que ayudan a los lectores de pantalla y a los buscadores. Todo el contenido es propio del consultorio.</p></article>
+   <article class="card vr-card"><span class="vr-num">3</span><h3>Navegación y agendamiento</h3><p class="vr-quien">Robinson Arenas Vélez</p>
+    <p>La función <code>route()</code> lee la dirección después del símbolo # y muestra la vista correspondiente. Luego se agenda una cita en vivo: se elige el servicio y el especialista, se escriben los datos (con validación inmediata, por ejemplo el celular debe empezar por 3) y se confirma.</p>
+    <p>Al confirmar se genera un código que empieza por SP. En Mis citas se busca la cita por código o documento y se puede cancelar. Como GitHub Pages solo sirve archivos, las citas se guardan en el navegador (localStorage).</p></article>
+   <article class="card vr-card"><span class="vr-num">4</span><h3>Diseño, Git y publicación</h3><p class="vr-quien">Juan Carlos Londoño Álvarez</p>
+    <p>Los colores se definen como variables CSS (azul marino y dorado champán) con contraste que cumple la norma de accesibilidad. El diseño es primero para celular y se amplía con media queries; incluye menú tipo botón, barra inferior y modo oscuro.</p>
+    <p>Se muestra el flujo de Git (<code>git add</code>, <code>git commit</code>, <code>git push</code>), la publicación en GitHub Pages con HTTPS y el cierre: se usó Claude, una herramienta de inteligencia artificial, como asistente, y el grupo probó y aprobó cada versión.</p></article>
   </div>
  </div></section>
 </div>

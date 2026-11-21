@@ -102,3 +102,10 @@ Las cifras, la calificación y los testimonios son **de ejemplo** y así se indi
 - **index.html**: los textos «Política de datos» del formulario de citas, del formulario de contacto y del pie de página ahora abren un diálogo (`#dlg-pol`) con los datos que se piden, para qué se usan, dónde se guardan y los derechos del titular.
 - **main.js** (sección 18, al final): un solo manejador abre el diálogo desde los tres enlaces. El botón «Borrar mis datos de este navegador» elimina solo la llave `sonrisa-plena-citas` de `localStorage` (derecho de supresión) y conserva el tema claro/oscuro.
 - **styles.css** (sección 18, al final): estilo del enlace `.link-pol` (accesible con teclado) y del diálogo largo `.dlg-doc`.
+
+## Pestaña «Video» en el menú
+
+- **index.html**: nueva pestaña «Video» en el menú principal (entre Nosotros y Contacto) y nueva vista `#v-video` con el video del proyecto y una explicación en texto de lo que se dice en cada parte (problema y objetivo, estructura y HTML, navegación y agendamiento, diseño, Git y publicación). La sección del video sale de Inicio.
+- **main.js**: se agregó `'video'` a la lista `VISTAS` (línea 96), así `route()` muestra la vista sin cambiar su código. Se retiró el desplazamiento automático a `#video`, que ya no hace falta.
+- **styles.css** (sección 19, al final): tarjetas del resumen, adaptables y con modo oscuro.
+- La línea 34 de index.html cambió de contenido (se agregó la pestaña), sin mover las demás líneas citadas en el informe.

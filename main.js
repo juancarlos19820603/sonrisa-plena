@@ -93,7 +93,7 @@ const maskDoc=d=>d?'••••'+String(d).slice(-4):'';
 const limpiar=s=>String(s).replace(/[<>]/g,'').replace(/\s+/g,' ').trim();
 
 /* ---------- Router por hash (#nombre) ---------- */
-const VISTAS=['inicio','servicios','agendar','mis-citas','panel','nosotros','contacto'];
+const VISTAS=['inicio','servicios','agendar','mis-citas','panel','nosotros','contacto','video'];
 function route(){
  let r=(location.hash||'#inicio').slice(1);
  let view=r, srv=null;
@@ -421,10 +421,8 @@ function renderTablaServicios(){const tb=$('#tabla-srv-body');if(!tb)return;
   h('th',{scope:'row'},h('a',{href:'#servicio-'+s.id,text:s.nombre})),
   h('td',{text:s.cat}),h('td',{class:'cnum',text:s.dur+' min'}),
   h('td',{class:'cnum',text:fmt(s.precio)}),h('td',{class:'cnum',text:String(docsDe(s.id).length)}))));}
-/* #video no es una vista: route() muestra Inicio y aquí se baja hasta la sección del video */
-function irAVideo(){if(location.hash!=='#video')return;setTimeout(()=>{const v=$('#video');if(v)v.scrollIntoView({behavior:'smooth',block:'start'});},80);}
-window.addEventListener('hashchange',irAVideo);
-renderVideo();renderTablaServicios();irAVideo();
+/* #video es una vista propia (pestaña Video del menú); route() la muestra como las demás */
+renderVideo();renderTablaServicios();
 
 /* ---------- 18. Política de tratamiento de datos (Ley 1581 de 2012) ---------- */
 /* Un solo diálogo para los tres enlaces (formulario, contacto y pie de página) */
