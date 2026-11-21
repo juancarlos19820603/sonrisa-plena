@@ -9,7 +9,7 @@ function h(tag,attrs={},...kids){const e=document.createElement(tag);for(const[k
 const $=s=>document.querySelector(s);
 /* Fotos: archivos en /img (antes iban en base64 dentro del HTML). loading="lazy" = se descargan al acercarse */
 const imgSrc=k=>'img/'+k+'.jpg';
-function pic(key,alt,style){const i=h("img",{class:"cover",alt:alt,loading:"lazy",decoding:"async",style:style||""});i.src=imgSrc(key);return i;}
+function pic(key,alt,style,lazy=true){const i=h("img",{class:"cover",alt:alt,loading:lazy?"lazy":"eager",decoding:"async",style:style||""});i.addEventListener("error",()=>{if(!i.dataset.reintento){i.dataset.reintento="1";i.src=imgSrc(key)+"?r="+Date.now();}else{const ph=h("div",{class:"foto-ph",role:"img","aria-label":alt},h("span",{text:(alt.replace(/^Retrato de (Dra?\.\s)?/,"").match(/\b\p{Lu}/gu)||["SP"]).slice(0,2).join("")}));i.replaceWith(ph);}});i.src=imgSrc(key);return i;}   // si una foto falla: reintenta una vez y, si sigue fallando, muestra las iniciales en lugar del ícono roto
 const fmt=n=>'$'+n.toLocaleString('es-CO');
 
 /* ---------- Datos del consultorio ---------- */
@@ -318,7 +318,7 @@ function revelar(){
 function renderCarrusel(){
  const tr=$('#car-track');
  tr.replaceChildren(...ODONTOLOGOS.map((d,i)=>h('article',{class:'card slide',role:'group','aria-roledescription':'diapositiva','aria-label':(i+1)+' de '+ODONTOLOGOS.length+': '+d.nombre},
-  h('div',{class:'media'},pic(d.id,'Retrato de '+d.nombre+', '+d.esp)),
+  h('div',{class:'media'},pic(d.id,'Retrato de '+d.nombre+', '+d.esp,'',false)),   // carrusel: carga inmediata (el lazy en scroll horizontal falla en algunos navegadores)
   h('div',{class:'info'},h('b',{text:d.nombre,style:'display:block;font-size:1.05rem'}),h('span',{class:'muted',style:'font-size:.9rem',text:d.esp+' · '+d.exp+' años'})))));
  const paso=()=>{const s=tr.querySelector('.slide');return s?s.getBoundingClientRect().width+20:300;};
  const upd=()=>{$('#car-prev').disabled=tr.scrollLeft<=4;$('#car-next').disabled=tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-4;};

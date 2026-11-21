@@ -90,3 +90,9 @@ Las cifras, la calificación y los testimonios son **de ejemplo** y así se indi
 - **styles.css** (sección 17, al final): títulos en Fraunces, estilos de la sección del video, tablas con fondo y borde de color, y listas.
 - **main.js** (sección 17, al final): constante `VIDEO_YOUTUBE` para pegar el enlace del video, tabla de servicios generada con los datos de `SERVICIOS` y desplazamiento a `#video`. Se corrigió el mensaje de almacenamiento de la línea 48.
 - Las líneas citadas en el informe y en el guion (index.html 1-13 y 27-37, styles.css 8-20, main.js 97-106 y 200-205) no cambiaron de posición.
+
+## Corrección de fotos del carrusel de especialistas (21 de noviembre de 2026)
+
+- **main.js** (función `pic`, línea 12): si una foto no carga, se reintenta una vez; si vuelve a fallar, se muestran las iniciales del especialista en lugar del ícono de imagen rota.
+- **main.js** (`renderCarrusel`): las fotos del carrusel cargan de inmediato (sin `loading="lazy"`), porque la carga diferida dentro de un desplazamiento horizontal no siempre se dispara.
+- **styles.css** (al final): estilo `.foto-ph` para las iniciales.

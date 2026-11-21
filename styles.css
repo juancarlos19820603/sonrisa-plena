@@ -432,3 +432,5 @@ table.tabla-color{min-width:560px}
 .glosario{margin-top:8px}
 .contacto-extra{margin-top:48px;align-items:start}
 [data-theme=dark] .tabla-color thead th{background:#132A4F}
+/* Respaldo si una foto no carga: iniciales sobre el color de la marca en vez del ícono de imagen rota */
+.foto-ph{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#132A4F,#0A1A33);color:#D2B67C;font:600 2.4rem/1 "Fraunces",Georgia,serif;letter-spacing:.04em}
