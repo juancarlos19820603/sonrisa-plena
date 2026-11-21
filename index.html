@@ -206,7 +206,7 @@
       <div class="field"><label for="f-mail">Correo electrónico *</label><input id="f-mail" type="email" autocomplete="email" maxlength="80" placeholder="nombre@correo.com" required aria-describedby="e-mail"><p class="err" id="e-mail" aria-live="polite"></p></div>
      </div>
      <div class="field"><label for="f-coment">Comentarios para el odontólogo (opcional)</label><textarea id="f-coment" maxlength="300" placeholder="Ej. tengo sensibilidad dental"></textarea></div>
-     <label class="check"><input type="checkbox" id="f-ley" aria-describedby="e-ley"> <span>Autorizo el tratamiento de mis datos personales según la Política de datos (Ley 1581 de 2012). *</span></label>
+     <label class="check"><input type="checkbox" id="f-ley" aria-describedby="e-ley"> <span>Autorizo el tratamiento de mis datos personales según la <button type="button" class="link-pol" data-politica>Política de datos</button> (Ley 1581 de 2012). *</span></label>
      <p class="err" id="e-ley" aria-live="polite"></p>
      <label class="check"><input type="checkbox" id="f-wa" checked> <span>Quiero recibir el recordatorio por WhatsApp.</span></label>
     </div>
@@ -280,7 +280,7 @@
     <div class="fgrid"><div class="field"><label for="c-nombre">Nombre *</label><input id="c-nombre" type="text" maxlength="60"><p class="err" id="ce-nombre"></p></div><div class="field"><label for="c-mail">Correo *</label><input id="c-mail" type="email" maxlength="80"><p class="err" id="ce-mail"></p></div></div>
     <div class="field"><label for="c-asunto">Asunto</label><select id="c-asunto"><option>Información de servicios</option><option>Precios</option><option>Otro</option></select></div>
     <div class="field"><label for="c-msg">Mensaje *</label><textarea id="c-msg" maxlength="500"></textarea><p class="err" id="ce-msg"></p></div>
-    <label class="check"><input type="checkbox" id="c-ley"> <span>Acepto la Política de tratamiento de datos (Ley 1581 de 2012). *</span></label><p class="err" id="ce-ley"></p>
+    <label class="check"><input type="checkbox" id="c-ley"> <span>Acepto la <button type="button" class="link-pol" data-politica>Política de tratamiento de datos</button> (Ley 1581 de 2012). *</span></label><p class="err" id="ce-ley"></p>
     <div class="row-btns"><button class="btn primary" type="submit"><span data-ic="mail" data-c="#fff"></span>Enviar mensaje</button><a class="btn outline" href="#agendar"><span data-ic="cal" data-c="currentColor"></span>Prefiero agendar</a></div>
     <p class="note warn" id="c-ok" hidden style="margin-top:16px"></p>
    </form>
@@ -315,7 +315,7 @@
    <p style="margin-top:10px">Cra. 43A #1-50, El Poblado</p>
   </div>
  </div>
- <div class="foot-bottom"><span>© 2026 Sonrisa Plena · Proyecto académico ficticio – Electiva I, IBERO.</span><span>Política de tratamiento de datos · Ley 1581 de 2012</span></div>
+ <div class="foot-bottom"><span>© 2026 Sonrisa Plena · Proyecto académico ficticio – Electiva I, IBERO.</span><span><button type="button" class="link-pol" data-politica>Política de tratamiento de datos</button> · Ley 1581 de 2012</span></div>
 </div></footer>
 
 <!-- Barra fija inferior (celular) -->
@@ -327,6 +327,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <dialog id="dlg" aria-labelledby="dlg-t"><h3 id="dlg-t" style="margin-bottom:8px"></h3><p class="muted" id="dlg-m" style="margin-bottom:20px"></p><div class="row-btns" style="justify-content:flex-end"><button class="btn outline sm" id="dlg-no">No, volver</button><button class="btn danger sm" id="dlg-si">Sí, cancelar</button></div></dialog>
 
+<dialog id="dlg-pol" class="dlg-doc" aria-labelledby="pol-t"><h3 id="pol-t">Política de tratamiento de datos</h3><div class="dlg-cuerpo"><p class="muted">Proyecto académico ficticio. Texto de ejemplo basado en la Ley 1581 de 2012 (Colombia).</p><h4>¿Qué datos pedimos?</h4><ul class="lista-check"><li>Nombre, documento, teléfono y correo para agendar o responder su mensaje.</li><li>Servicio, odontólogo, fecha y hora de la cita.</li></ul><h4>¿Para qué los usamos?</h4><p>Solo para gestionar su cita y contactarle. No los vendemos ni los compartimos.</p><h4>¿Dónde quedan guardados?</h4><p>En este sitio de demostración las citas se guardan solo en el almacenamiento local de su navegador (localStorage). No se envían a ningún servidor.</p><h4>Sus derechos</h4><p>Puede conocer, actualizar, rectificar y pedir la supresión de sus datos, y revocar la autorización. Escriba a <a href="mailto:citas@sonrisaplena.co">citas@sonrisaplena.co</a>.</p></div><div class="row-btns" style="justify-content:flex-end"><button class="btn outline sm" id="pol-borrar">Borrar mis datos de este navegador</button><button class="btn primary sm" id="pol-ok">Entendido</button></div></dialog>
 <script src="main.js"></script>
 </body>
 </html>

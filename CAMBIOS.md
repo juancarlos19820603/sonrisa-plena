@@ -96,3 +96,9 @@ Las cifras, la calificación y los testimonios son **de ejemplo** y así se indi
 - **main.js** (función `pic`, línea 12): si una foto no carga, se reintenta una vez; si vuelve a fallar, se muestran las iniciales del especialista en lugar del ícono de imagen rota.
 - **main.js** (`renderCarrusel`): las fotos del carrusel cargan de inmediato (sin `loading="lazy"`), porque la carga diferida dentro de un desplazamiento horizontal no siempre se dispara.
 - **styles.css** (al final): estilo `.foto-ph` para las iniciales.
+
+## Política de tratamiento de datos (Ley 1581 de 2012)
+
+- **index.html**: los textos «Política de datos» del formulario de citas, del formulario de contacto y del pie de página ahora abren un diálogo (`#dlg-pol`) con los datos que se piden, para qué se usan, dónde se guardan y los derechos del titular.
+- **main.js** (sección 18, al final): un solo manejador abre el diálogo desde los tres enlaces. El botón «Borrar mis datos de este navegador» elimina solo la llave `sonrisa-plena-citas` de `localStorage` (derecho de supresión) y conserva el tema claro/oscuro.
+- **styles.css** (sección 18, al final): estilo del enlace `.link-pol` (accesible con teclado) y del diálogo largo `.dlg-doc`.

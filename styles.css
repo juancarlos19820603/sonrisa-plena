@@ -434,3 +434,12 @@ table.tabla-color{min-width:560px}
 [data-theme=dark] .tabla-color thead th{background:#132A4F}
 /* Respaldo si una foto no carga: iniciales sobre el color de la marca en vez del ícono de imagen rota */
 .foto-ph{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#132A4F,#0A1A33);color:#D2B67C;font:600 2.4rem/1 "Fraunces",Georgia,serif;letter-spacing:.04em}
+
+/* ---------- 18. Diálogo de la política de datos ---------- */
+.link-pol{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.link-pol:hover{color:#B8975A}
+.link-pol:focus-visible{outline:2px solid #B8975A;outline-offset:2px;border-radius:2px}
+dialog.dlg-doc{max-width:560px}
+.dlg-doc h4{font-size:1rem;margin:14px 0 4px}
+.dlg-doc .dlg-cuerpo{max-height:60vh;overflow:auto;margin:8px 0 20px;padding-right:6px}
+.dlg-doc p,.dlg-doc li{font-size:.95rem;line-height:1.55}

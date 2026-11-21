@@ -425,3 +425,12 @@ function renderTablaServicios(){const tb=$('#tabla-srv-body');if(!tb)return;
 function irAVideo(){if(location.hash!=='#video')return;setTimeout(()=>{const v=$('#video');if(v)v.scrollIntoView({behavior:'smooth',block:'start'});},80);}
 window.addEventListener('hashchange',irAVideo);
 renderVideo();renderTablaServicios();irAVideo();
+
+/* ---------- 18. Política de tratamiento de datos (Ley 1581 de 2012) ---------- */
+/* Un solo diálogo para los tres enlaces (formulario, contacto y pie de página) */
+const dlgPol=$('#dlg-pol');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-politica]');if(!b)return;e.preventDefault();dlgPol.showModal();});
+$('#pol-ok').addEventListener('click',()=>dlgPol.close());
+/* Derecho de supresión: borra solo la llave de las citas; el tema claro/oscuro se conserva */
+$('#pol-borrar').addEventListener('click',()=>{try{localStorage.removeItem(LKEY);}catch(e){}
+ store.citas=[];renderCitas();dlgPol.close();toast('Listo: se borraron las citas guardadas en este navegador.');});
