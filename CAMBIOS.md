@@ -109,3 +109,9 @@ Las cifras, la calificación y los testimonios son **de ejemplo** y así se indi
 - **main.js**: se agregó `'video'` a la lista `VISTAS` (línea 96), así `route()` muestra la vista sin cambiar su código. Se retiró el desplazamiento automático a `#video`, que ya no hace falta.
 - **styles.css** (sección 19, al final): tarjetas del resumen, adaptables y con modo oscuro.
 - La línea 34 de index.html cambió de contenido (se agregó la pestaña), sin mover las demás líneas citadas en el informe.
+
+## Historial de versiones
+
+- **index.html**: enlace «Historial de versiones» en el pie (columna Contacto) y diálogo `#dlg-hist` con las versiones 1.0 a 1.5 y el enlace a los commits del repositorio.
+- **main.js** y **styles.css** (sección 19, al final): apertura y cierre del diálogo y estilo de la lista.
+- Gestión de cambios: cada versión se subió como un commit separado, con su descripción, para conservar la trazabilidad.

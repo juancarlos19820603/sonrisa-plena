@@ -456,3 +456,7 @@ dialog.dlg-doc{max-width:560px}
 .vr-card code{font-size:.88em;background:rgba(184,151,90,.14);padding:1px 5px;border-radius:4px}
 [data-theme=dark] .vr-quien{color:#D2B67C}
 [data-theme=dark] .vr-num{background:#D2B67C;color:#0A1A33}
+
+/* ---------- 20. Historial de versiones ---------- */
+.hist li{margin-bottom:8px}
+.hist strong{display:block;color:#B8975A;font-size:.85rem;letter-spacing:.02em}

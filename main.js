@@ -432,3 +432,8 @@ $('#pol-ok').addEventListener('click',()=>dlgPol.close());
 /* Derecho de supresión: borra solo la llave de las citas; el tema claro/oscuro se conserva */
 $('#pol-borrar').addEventListener('click',()=>{try{localStorage.removeItem(LKEY);}catch(e){}
  store.citas=[];renderCitas();dlgPol.close();toast('Listo: se borraron las citas guardadas en este navegador.');});
+
+/* ---------- 20. Historial de versiones (cada versión = un commit en GitHub) ---------- */
+const dlgHist=$('#dlg-hist');
+$('#abrir-hist').addEventListener('click',()=>dlgHist.showModal());
+$('#hist-ok').addEventListener('click',()=>dlgHist.close());
