@@ -115,3 +115,9 @@ Las cifras, la calificación y los testimonios son **de ejemplo** y así se indi
 - **index.html**: enlace «Historial de versiones» en el pie (columna Contacto) y diálogo `#dlg-hist` con las versiones 1.0 a 1.5 y el enlace a los commits del repositorio.
 - **main.js** y **styles.css** (sección 19, al final): apertura y cierre del diálogo y estilo de la lista.
 - Gestión de cambios: cada versión se subió como un commit separado, con su descripción, para conservar la trazabilidad.
+
+## Video del proyecto en YouTube (versión 1.6)
+
+- **main.js**: `VIDEO_YOUTUBE` apunta al video publicado (https://youtu.be/_PgZr43LglI). La pestaña Video lo muestra con el reproductor de youtube-nocookie.com (modo de privacidad mejorada de YouTube).
+- **index.html**: versión 1.6 en el historial de versiones y ajuste del texto sobre el uso de inteligencia artificial en el resumen del video.
+- **main.js** y **styles.css** (sección 21): enlace «Ver el video en YouTube» bajo el título de la sección. Si el sitio se abre como archivo (file://), el navegador no envía el encabezado Referer, que YouTube exige (error 153); en ese caso se muestra el enlace en lugar del reproductor.

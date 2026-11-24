@@ -460,3 +460,7 @@ dialog.dlg-doc{max-width:560px}
 /* ---------- 20. Historial de versiones ---------- */
 .hist li{margin-bottom:8px}
 .hist strong{display:block;color:#B8975A;font-size:.85rem;letter-spacing:.02em}
+
+/* ---------- 21. Enlace al video en YouTube ---------- */
+.video-yt{margin-top:14px;display:inline-flex}
+.video-ph .video-yt{margin-top:16px;background:#D2B67C;color:#0A1A33;border-color:#D2B67C}

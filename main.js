@@ -408,12 +408,16 @@ ajustarBarra();
 
 /* ---------- 17. Actividad 4: video del proyecto, tabla de servicios y enlace #video ---------- */
 /* Pegue aquí el enlace del video de YouTube (por ejemplo https://youtu.be/XXXXXXXXXXX). */
-const VIDEO_YOUTUBE='';
+const VIDEO_YOUTUBE='https://youtu.be/_PgZr43LglI';
 /* Solo se acepta un identificador de 11 caracteres de YouTube: así no se inserta una URL arbitraria en la página */
 function idYoutube(url){const m=String(url).match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([\w-]{11})/);return m?m[1]:null;}
 function renderVideo(){const box=$('#video-box');if(!box)return;const id=idYoutube(VIDEO_YOUTUBE);
  if(id){const f=h('iframe',{title:'Video: así creamos el sitio Sonrisa Plena',loading:'lazy',allow:'accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share',referrerpolicy:'strict-origin-when-cross-origin',allowfullscreen:''});
-  f.src='https://www.youtube-nocookie.com/embed/'+id;box.replaceChildren(f);}
+  f.src='https://www.youtube-nocookie.com/embed/'+id;
+  /* YouTube exige el encabezado Referer (error 153 si falta). Abierto como archivo (file://) no hay Referer: se muestra un enlace en su lugar */
+  const ver=h('a',{class:'btn outline sm video-yt',href:'https://www.youtube.com/watch?v='+id,target:'_blank',rel:'noopener',text:'Ver el video en YouTube ↗'});
+  if(location.protocol==='file:')box.replaceChildren(h('div',{class:'video-ph'},h('div',{},h('div',{class:'play','aria-hidden':'true',text:'▶'}),h('p',{text:'Para ver el video aquí, abre el sitio con Live Server o desde GitHub Pages.'}),ver)));
+  else{box.replaceChildren(f);box.closest('section').querySelector('.sec-head').append(h('div',{},ver));}}
  else box.replaceChildren(h('div',{class:'video-ph'},h('div',{},h('div',{class:'play','aria-hidden':'true',text:'▶'}),h('p',{text:'Aquí se verá el video de demostración del proyecto.'}))));}
 /* La tabla se arma con los mismos datos de SERVICIOS y ODONTOLOGOS: si cambia un precio, cambia en todo el sitio */
 function renderTablaServicios(){const tb=$('#tabla-srv-body');if(!tb)return;
